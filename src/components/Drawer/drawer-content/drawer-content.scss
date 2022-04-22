@@ -1,69 +1,85 @@
-.dapp-sidebar {
+$icon-size: 32px;
+
+.sidebar {
+  padding: 40px;
   height: 100vh;
-  min-width: 280px;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
+  background: #242424;
 
-  .branding-header {
+  .menu-list{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-decoration: none;
-    margin: 20px 0 63px 0;
 
-    .wallet-link {
-      margin: 10px;
-  
-      p{
-        font-family: Montserrat SemiBold;
-        font-size: 14px;
-        color: #FFFFFF;
-      }
+    &.footer{
+      flex-direction: column;
+      margin-top: auto;
     }
-  }
 
-  .dapp-menu-links{
-    display: flex;
-    align-items: center;
-
-    .dapp-nav {
+    .menu-nav {
       display: flex;
       flex-flow: column;
+      width: 100%;
 
       a {
-        margin-top: 20px;
-        margin-left: 20px;
+        margin: 18px 0;
         align-items: center;
-        margin-bottom: 20px;
 
-        img {
+        &:hover {
+          text-decoration: none !important;
+        }
+
+        .menu-icon img {
           width: 20px;
           height: 20px;
-          margin-right: 10px;
+          // margin-right: 10px;
           vertical-align: -4px;
         }
       }
 
       .button-dapp-menu{
+        @mixin menuActive {
+          .dapp-menu-item{
+            background: #392E23;
+            border-radius: 8px;
+        
+            .menu-icon {
+              background: #281A0D;
+            }
+        
+            p {
+              color: #EDD185;
+              font-weight: 900;
+            }
+          }
+        }
+
+        &.active {
+          @include menuActive;
+        }
+
         .dapp-menu-item{
           display: flex;
           flex-direction: row;
           align-items: center;
+          padding: 4px;
+
+          .menu-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            width: $icon-size;
+            height: $icon-size;
+            background: #392E23;
+            border-radius: 4px;
+          }
         
           p{
-            font-weight: 600;
-            font-size: 16px;
+            font-weight: 500;
+            font-size: 15px;
             color: #FFFFFF;
-            font-family: Montserrat SemiBold;
-          }
-        }
-      }
-
-      .button-dapp-menu.active {
-        .dapp-menu-item{
-          p{
-            text-decoration: underline;
           }
         }
       }
@@ -99,39 +115,21 @@
     }
   }
 
-  .dapp-menu-doc-link{
-    margin-top: auto;
-    
-    a {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-
-      img {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-        vertical-align: middle;
-      }
-
-      p{
-        font-family: Montserrat SemiBold;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 20px;
-        color: #FFFFFF;
-      }
-    }
-  }
-
-  .social-row {
+  .sns {
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
-    padding: 1.3rem;
+    margin: 20px 0;
+    
     a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $icon-size;
+      height: $icon-size;
+      background: #484850;
+      border-radius: 100px;
+
       &:hover {
         transform: scale(1.1);
       }
