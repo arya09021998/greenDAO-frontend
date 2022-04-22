@@ -4,48 +4,59 @@
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
+  gap: 40px;
 
+  padding: 60px 0;
   width: 89%;
-  max-width: 833px;
+  max-width: 1080px;
   margin: auto;
 
   .dashboard-infos-wrap{
     .dashboard-card{
       display: flex;
-      align-items: center;
       justify-content: center;
       flex-direction: column;
+      gap: 10px;
 
       position: relative;
       z-index: 2;
-      
+
+      padding: 16px 28px;
+      min-height: 90px;
+
       @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-        background: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(100px);
+        background: #1E1D1D;
+        backdrop-filter: blur(100px);
       }
     
       /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
       @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-        background: #181B1C;
+        background: #1E1D1D;
       }
 
       border-radius: 10px;
-      padding: 13px 0;
 
       .card-title {
-        font-family: Montserrat Medium;
+        color: #909090;
         font-weight: 500;
-        font-size: 20px;
-        color: rgba(255, 255, 255, 0.6);
+        font-size: 14px;
       }
   
       .card-value {
-        font-family: Montserrat Bold;
-        font-weight: bold;
-        font-size: 24px;
-        font-weight: bold;
         color: #FFFFFF;
+        font-weight: 800;
+        font-size: 20px;
       }
     }
   }
-}
+
+  .dashboard-menus-wrap {
+    width:100%;
+
+    .dashboard-card {
+      min-height: 132px;
+      background: #1E1D1D;
+      border-radius: 16px;
+    }
+  }
+} 

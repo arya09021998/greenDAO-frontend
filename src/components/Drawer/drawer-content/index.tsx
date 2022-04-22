@@ -48,7 +48,7 @@ function NavContent() {
                         }}
                         className={classnames("button-dapp-menu", { active: isActive })}
                     >
-                        <div className="dapp-menu-item">
+                        <div className="menu-item">
                             <div className="menu-icon">
                                 <img alt="menu-icon" src={DashboardIcon} />
                             </div>
@@ -64,7 +64,7 @@ function NavContent() {
                         }}
                         className={classnames("button-dapp-menu", { active: isActive })}
                     >
-                        <div className="dapp-menu-item">
+                        <div className="menu-item">
                             <div className="menu-icon">
                                 <img alt="menu-icon" src={PortfolioIcon} />
                             </div>
@@ -80,7 +80,7 @@ function NavContent() {
                         }}
                         className={classnames("button-dapp-menu", { active: isActive })}
                     >
-                        <div className="dapp-menu-item">
+                        <div className="menu-item">
                             <div className="menu-icon">
                                 <img alt="menu-icon" src={StakeIcon} />
                             </div>
@@ -95,7 +95,7 @@ function NavContent() {
                         }}
                         className={classnames("button-dapp-menu", { active: isActive })}
                     >
-                        <div className="dapp-menu-item">
+                        <div className="menu-item">
                             <div className="menu-icon">
                                 <img alt="menu-icon" src={BoostedStakeIcon} />
                             </div>
@@ -112,7 +112,7 @@ function NavContent() {
                         }}
                         className={classnames("button-dapp-menu", { active: isActive })}
                     >
-                        <div className="dapp-menu-item">
+                        <div className="menu-item">
                             <div className="menu-icon">
                                 <img alt="menu-icon" src={MintIcon} />
                             </div>
@@ -127,7 +127,7 @@ function NavContent() {
                         }}
                         className={classnames("button-dapp-menu", { active: isActive })}
                     >
-                        <div className="dapp-menu-item">
+                        <div className="menu-item">
                             <div className="menu-icon">
                                 <img alt="menu-icon" src={NFTMarketPlace} />
                             </div>
@@ -135,7 +135,7 @@ function NavContent() {
                         </div>
                     </Link>
 
-                    {/* <Link
+                    <Link
                         component={NavLink}
                         to="/calculator"
                         isActive={(match: any, location: any) => {
@@ -143,17 +143,17 @@ function NavContent() {
                         }}
                         className={classnames("button-dapp-menu", { active: isActive })}
                     >
-                        <div className="dapp-menu-item">
+                        <div className="menu-item">
                             <img alt="" src={GlobeIcon} />
                             <p>Calculator</p>
                         </div>
-                    </Link> */}
+                    </Link>
                 </nav>
             </header>
             <footer className="menu-list footer">
                 <nav className="menu-nav">
                     <Link href="javascript:;" className="button-dapp-menu">
-                        <div className="dapp-menu-item">
+                        <div className="menu-item">
                             <div className="menu-icon">
                                 <img alt="menu-icon" src={DocsIcon} />
                             </div>

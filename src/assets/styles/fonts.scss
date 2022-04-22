@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
 @font-face {
     font-family: "Montserrat SemiBold";
     src: local("Montserrat SemiBold"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
@@ -26,40 +28,4 @@
 @font-face {
     font-family: "Courier";
     src: local("Courier"), url("../fonts/CourierPrime-Regular.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "NotoSansKR";
-    font-weight: 100;
-    src: local("NotoSansKR Thin"), url("../fonts/NotoSansKR-Thin.otf") format("truetype");
-}
-
-@font-face {
-    font-family: "NotoSansKR";
-    font-weight: 300;
-    src: local("NotoSansKR Light"), url("../fonts/NotoSansKR-Light.otf") format("truetype");
-}
-
-@font-face {
-    font-family: "NotoSansKR";
-    font-weight: 400;
-    src: local("NotoSansKR Regular"), url("../fonts/NotoSansKR-Regular.otf") format("truetype");
-}
-
-@font-face {
-    font-family: "NotoSansKR";
-    font-weight: 500;
-    src: local("NotoSansKR Medium"), url("../fonts/NotoSansKR-Medium.otf") format("truetype");
-}
-
-@font-face {
-    font-family: "NotoSansKR";
-    font-weight: 700;
-    src: local("NotoSansKR Bold"), url("../fonts/NotoSansKR-Bold.otf") format("truetype");
-}
-
-@font-face {
-    font-family: "NotoSansKR";
-    font-weight: 900;
-    src: local("NotoSansKR Black"), url("../fonts/NotoSansKR-Black.otf") format("truetype");
 }

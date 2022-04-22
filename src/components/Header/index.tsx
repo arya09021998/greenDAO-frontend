@@ -16,8 +16,9 @@ interface IHeader {
 const useStyles = makeStyles(theme => ({
     appBar: {
         [theme.breakpoints.up("sm")]: {
-            width: "100%",
-            padding: "20px 0 30px 0",
+            width: "calc(100% - 320px)",
+            // maxWidth: "833px",
+            padding: "0 30px",
         },
         justifyContent: "flex-end",
         alignItems: "flex-end",
@@ -48,14 +49,14 @@ function Header({ handleDrawerToggle, drawe }: IHeader) {
 
     return (
         <div className={`${classes.topBar} ${!drawe && classes.topBarShift}`}>
-            <AppBar position="sticky" className={classes.appBar} elevation={0}>
+            <AppBar position="fixed" className={classes.appBar} elevation={0}>
                 <Toolbar disableGutters className="dapp-topbar">
                     <div onClick={handleDrawerToggle} className="dapp-topbar-slider-btn">
                         <img src={MenuIcon} alt="" />
                     </div>
-                    <div className="dapp-topbar-btns-wrap">
-                        {!isVerySmallScreen && <TimeMenu />}
-                        {!isWrapShow && <WrapButton />}
+                    <div className="connect-wallet">
+                        {/* {!isVerySmallScreen && <TimeMenu />}
+                        {!isWrapShow && <WrapButton />} */}
                         <ConnectButton />
                     </div>
                 </Toolbar>

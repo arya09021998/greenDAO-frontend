@@ -40,7 +40,7 @@ $icon-size: 32px;
 
       .button-dapp-menu{
         @mixin menuActive {
-          .dapp-menu-item{
+          .menu-item{
             background: #392E23;
             border-radius: 8px;
         
@@ -59,7 +59,7 @@ $icon-size: 32px;
           @include menuActive;
         }
 
-        .dapp-menu-item{
+        .menu-item{
           display: flex;
           flex-direction: row;
           align-items: center;

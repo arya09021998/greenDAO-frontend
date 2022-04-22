@@ -1,13 +1,10 @@
 .dapp-topbar {
-  width: 89%;
-  max-width: 833px;
+  width: 100%;
+  max-width: 1080px;
   align-items: center;
-  margin: auto;
+  //margin: auto;
 
   .dapp-topbar-slider-btn{
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0px 0px 10px rgba(44, 39, 109, 0.1);
-    border-radius: 10px;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -16,7 +13,7 @@
     margin-right: 16px;
   }
 
-  .dapp-topbar-btns-wrap{
+  .connect-wallet {
     display: flex;
     align-items: center;
     margin-left: auto;
