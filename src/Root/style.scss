@@ -1,5 +1,7 @@
 @import "../assets/styles/fonts.scss";
 
+$font-family: 'Noto Sans Display', 'Noto Sans KR', sans-serif;
+
 * {
   outline: none;
   box-sizing: border-box;
@@ -9,7 +11,7 @@ html,
 body,
 #root {
   // font-family: "Square";
-  font-family: 'Noto Sans Display', 'Noto Sans KR', sans-serif;
+  font-family: $font-family;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,6 +22,8 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+input, button, pre { font-family: $font-family }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

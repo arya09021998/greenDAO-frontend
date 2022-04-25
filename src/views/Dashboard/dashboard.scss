@@ -6,10 +6,11 @@
   overflow: hidden;
   gap: 40px;
 
+  margin: auto;
   padding: 60px 0;
   width: 89%;
   max-width: 1080px;
-  margin: auto;
+  color: #FFFFFF;
 
   .dashboard-infos-wrap{
     .dashboard-card{
@@ -54,9 +55,104 @@
     width:100%;
 
     .dashboard-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      
       min-height: 132px;
       background: #1E1D1D;
+      border: 1px solid #1E1D1D;
       border-radius: 16px;
+      color: #FFFFFF;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid #E8BD70;
+      }
+
+      .card-img {
+        height: 44px;
+      }
+
+      .card-text {
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .dashboard-contents-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    width: 100%;
+
+    &.bg {
+      padding: 16px 28px;
+      background: #1E1D1D;
+      border-radius: 16px;
+    }
+
+    &.buy-back-fund {
+      height: 140px;
+    }
+
+    &.fund {
+      height: 140px;
+    }
+
+    &.pool {
+      height: 270px;
+    }
+
+    &.announcements {
+      height: 430px;
+    }
+
+    > .title {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    > .value, > .contents {
+      padding: 16px 0;
+      font-size: 14px;
+
+      .token-name {
+        font-weight: 400;
+      }
+
+      .token-value {
+        font-weight: 800;
+      }
+    }
+
+    .dashboard-btn-box {
+      display: flex;
+      gap: 16px;
+
+      .dashboard-btn {
+        width: 100%;
+        height: 40px;
+        background: #373737;
+        border: none;
+        border-radius: 8px;
+        color: #FFFFFF;
+        font-weight: 700;
+        cursor: pointer;
+
+        &.gold {
+          background: linear-gradient(to left, #EDD185, #E8BD70);
+          color: #141414;
+        }
+      }
+    }
+
+    .link {
+      width: 100%;
     }
   }
 } 

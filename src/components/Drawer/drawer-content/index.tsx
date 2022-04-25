@@ -6,14 +6,13 @@ import StakeIcon from "../../../assets/icons/stake.svg";
 import BoostedStakeIcon from "../../../assets/icons/boostedStakeIcon.svg";
 import MintIcon from "../../../assets/icons/mint.svg";
 import NFTMarketPlace from "../../../assets/icons/nftMarketPlace.svg";
-import BondIcon from "../../../assets/icons/bond.svg";
-// import WonderlandIcon from "../../../assets/icons/wonderland-nav-header.svg";
+// import BondIcon from "../../../assets/icons/bond.svg";
 import DashboardIcon from "../../../assets/icons/dashboard.svg";
-import { trim, shorten } from "../../../helpers";
+// import { trim, shorten } from "../../../helpers";
 import { useAddress } from "../../../hooks";
 import useBonds from "../../../hooks/bonds";
 import { Link } from "@material-ui/core";
-import { Skeleton } from "@material-ui/lab";
+// import { Skeleton } from "@material-ui/lab";
 import "./drawer-content.scss";
 import DocsIcon from "../../../assets/icons/stake.svg";
 import GlobeIcon from "../../../assets/icons/wonderglobe.svg";
@@ -21,8 +20,8 @@ import classnames from "classnames";
 
 function NavContent() {
     const [isActive] = useState();
-    const address = useAddress();
-    const { bonds } = useBonds();
+    // const address = useAddress();
+    // const { bonds } = useBonds();
 
     const checkPage = useCallback((location: any, page: string): boolean => {
         const currentPath = location.pathname.replace("/", "");
@@ -46,7 +45,7 @@ function NavContent() {
                         isActive={(match: any, location: any) => {
                             return checkPage(location, "dashboard");
                         }}
-                        className={classnames("button-dapp-menu", { active: isActive })}
+                        className={classnames("button-nav-menu", { active: isActive })}
                     >
                         <div className="menu-item">
                             <div className="menu-icon">
@@ -62,7 +61,7 @@ function NavContent() {
                         isActive={(match: any, location: any) => {
                             return checkPage(location, "portfolio");
                         }}
-                        className={classnames("button-dapp-menu", { active: isActive })}
+                        className={classnames("button-nav-menu", { active: isActive })}
                     >
                         <div className="menu-item">
                             <div className="menu-icon">
@@ -78,7 +77,7 @@ function NavContent() {
                         isActive={(match: any, location: any) => {
                             return checkPage(location, "stake");
                         }}
-                        className={classnames("button-dapp-menu", { active: isActive })}
+                        className={classnames("button-nav-menu", { active: isActive })}
                     >
                         <div className="menu-item">
                             <div className="menu-icon">
@@ -93,7 +92,7 @@ function NavContent() {
                         isActive={(match: any, location: any) => {
                             return checkPage(location, "boostedStake");
                         }}
-                        className={classnames("button-dapp-menu", { active: isActive })}
+                        className={classnames("button-nav-menu", { active: isActive })}
                     >
                         <div className="menu-item">
                             <div className="menu-icon">
@@ -110,7 +109,7 @@ function NavContent() {
                         isActive={(match: any, location: any) => {
                             return checkPage(location, "mints");
                         }}
-                        className={classnames("button-dapp-menu", { active: isActive })}
+                        className={classnames("button-nav-menu", { active: isActive })}
                     >
                         <div className="menu-item">
                             <div className="menu-icon">
@@ -125,7 +124,7 @@ function NavContent() {
                         isActive={(match: any, location: any) => {
                             return checkPage(location, "nftMarketPlace");
                         }}
-                        className={classnames("button-dapp-menu", { active: isActive })}
+                        className={classnames("button-nav-menu", { active: isActive })}
                     >
                         <div className="menu-item">
                             <div className="menu-icon">
@@ -141,7 +140,7 @@ function NavContent() {
                         isActive={(match: any, location: any) => {
                             return checkPage(location, "calculator");
                         }}
-                        className={classnames("button-dapp-menu", { active: isActive })}
+                        className={classnames("button-nav-menu", { active: isActive })}
                     >
                         <div className="menu-item">
                             <img alt="" src={GlobeIcon} />
@@ -152,7 +151,7 @@ function NavContent() {
             </header>
             <footer className="menu-list footer">
                 <nav className="menu-nav">
-                    <Link href="javascript:;" className="button-dapp-menu">
+                    <Link href="javascript:;" className="button-nav-menu">
                         <div className="menu-item">
                             <div className="menu-icon">
                                 <img alt="menu-icon" src={DocsIcon} />

@@ -1,8 +1,8 @@
 {
-  "short_name": "Wonderland",
+  "short_name": "GreenDAO",
   "start_url": ".",
   "homepage": "./",
-  "name": "Wonderland",
+  "name": "GreenDAO",
   "launch_path": "/public/index.html",
   "icons": [
     {
