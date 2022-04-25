@@ -30,7 +30,7 @@ function BuyBackPoolStates() {
                 <button type="button" className="dashboard-btn gold">
                     Buy GRC
                 </button>
-                <Link href="javascript:;" target="blank" className="link">
+                <Link href="javascript:;" target="blank" rel="noopener noreferrer" className="link">
                     <button type="button" className="dashboard-btn">
                         View on Klaytnscope
                     </button>
