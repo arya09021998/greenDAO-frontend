@@ -151,7 +151,7 @@ function NavContent() {
             </header>
             <footer className="menu-list footer">
                 <nav className="menu-nav">
-                    <Link href="javascript:;" target="blank" className="button-nav-menu">
+                    <Link href="javascript:;" target="blank" rel="noopener noreferrer" className="button-nav-menu">
                         <div className="menu-item">
                             <div className="menu-icon">
                                 <img alt="menu-icon" src={DocsIcon} />
