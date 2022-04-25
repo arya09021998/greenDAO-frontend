@@ -1,4 +1,4 @@
-import { TwitterTimelineEmbed } from "react-twitter-embed";
+import { TwitterTimelineEmbed } from "react-twitter-embed"; // https://saurabhnemade.github.io/react-twitter-embed/
 
 function Announcements() {
     return (
