@@ -23,7 +23,7 @@ function Liquidity({ isConnected }: LiquidityProps) {
                 </article>
                 <section className="portfolio-info">
                     <Zoom in={true}>
-                        <Grid container spacing={2}>
+                        <Grid container spacing={1}>
                             <Grid item lg={4} md={6} sm={6} xs={6}>
                                 <Grid item container direction="column" spacing={1}>
                                     <Grid item>

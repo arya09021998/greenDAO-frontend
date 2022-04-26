@@ -17,9 +17,8 @@ interface IHeader {
 const useStyles = makeStyles(theme => ({
     appBar: {
         [theme.breakpoints.up("sm")]: {
-            width: "width:100%",
+            width: "100%",
             // maxWidth: "833px",
-            padding: "0 30px",
         },
         justifyContent: "flex-end",
         alignItems: "flex-end",

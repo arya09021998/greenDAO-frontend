@@ -12,10 +12,11 @@ import { IReduxState } from "../../store/slices/state.interface";
 import { messages } from "../../constants/messages";
 import classnames from "classnames";
 import { warning } from "../../store/slices/messages-slice";
+import ConnectWalletButton from "./ConnectWalletButton";
 
 function Stake() {
     const dispatch = useDispatch();
-    const { provider, address, connect, chainID, checkWrongNetwork } = useWeb3Context();
+    const { provider, address, chainID, checkWrongNetwork } = useWeb3Context();
 
     const [view, setView] = useState(0);
     const [quantity, setQuantity] = useState<string>("");
@@ -101,64 +102,11 @@ function Stake() {
             <Zoom in={true}>
                 <div className="stake-card">
                     <Grid className="stake-card-grid" container direction="column" spacing={2}>
-                        <Grid item>
-                            <div className="stake-card-header">
-                                <p className="stake-card-header-title">TIME Staking (🎩, 🎩)</p>
-                                <RebaseTimer />
-                            </div>
-                        </Grid>
-
-                        <Grid item>
-                            <div className="stake-card-metrics">
-                                <Grid container spacing={2}>
-                                    <Grid item xs={12} sm={4} md={4} lg={4}>
-                                        <div className="stake-card-apy">
-                                            <p className="stake-card-metrics-title">APY</p>
-                                            <p className="stake-card-metrics-value">
-                                                {stakingAPY ? <>{new Intl.NumberFormat("en-US").format(Number(trimmedStakingAPY))}%</> : <Skeleton width="150px" />}
-                                            </p>
-                                        </div>
-                                    </Grid>
-
-                                    <Grid item xs={6} sm={4} md={4} lg={4}>
-                                        <div className="stake-card-tvl">
-                                            <p className="stake-card-metrics-title">TVL</p>
-                                            <p className="stake-card-metrics-value">
-                                                {stakingTVL ? (
-                                                    new Intl.NumberFormat("en-US", {
-                                                        style: "currency",
-                                                        currency: "USD",
-                                                        maximumFractionDigits: 0,
-                                                        minimumFractionDigits: 0,
-                                                    }).format(stakingTVL)
-                                                ) : (
-                                                    <Skeleton width="150px" />
-                                                )}
-                                            </p>
-                                        </div>
-                                    </Grid>
-
-                                    <Grid item xs={6} sm={4} md={4} lg={4}>
-                                        <div className="stake-card-index">
-                                            <p className="stake-card-metrics-title">Current Index</p>
-                                            <p className="stake-card-metrics-value">{currentIndex ? <>{trim(Number(currentIndex), 2)} TIME</> : <Skeleton width="150px" />}</p>
-                                        </div>
-                                    </Grid>
-                                </Grid>
-                            </div>
-                        </Grid>
-
                         <div className="stake-card-area">
-                            {!address && (
-                                <div className="stake-card-wallet-notification">
-                                    <div className="stake-card-wallet-connect-btn" onClick={connect}>
-                                        <p>Connect Wallet</p>
-                                    </div>
-                                    <p className="stake-card-wallet-desc-text">Connect your wallet to stake TIME tokens!</p>
-                                </div>
-                            )}
-                            {address && (
-                                <div>
+                            {!address ? (
+                                <ConnectWalletButton />
+                            ) : (
+                                <>
                                     <div className="stake-card-action-area">
                                         <div className="stake-card-action-stage-btns-wrap">
                                             <div onClick={changeView(0)} className={classnames("stake-card-action-stage-btn", { active: !view })}>
@@ -169,7 +117,7 @@ function Stake() {
                                             </div>
                                         </div>
 
-                                        <div className="stake-card-action-row">
+                                        <div className="stake-card-action-box">
                                             <OutlinedInput
                                                 type="number"
                                                 placeholder="Amount"
@@ -238,44 +186,34 @@ function Stake() {
                                                 </div>
                                             )}
                                         </div>
+                                        <div className="stake-user-data">
+                                            <div className="data-row">
+                                                <p className="data-row-name">Your Balance</p>
+                                                <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trim(Number(timeBalance), 4)} TIME</>}</p>
+                                            </div>
 
-                                        <div className="stake-card-action-help-text">
-                                            {address && ((!hasAllowance("time") && view === 0) || (!hasAllowance("memo") && view === 1)) && (
-                                                <p>
-                                                    Note: The "Approve" transaction is only needed when staking/unstaking for the first time; subsequent staking/unstaking only
-                                                    requires you to perform the "Stake" or "Unstake" transaction.
-                                                </p>
-                                            )}
+                                            <div className="data-row">
+                                                <p className="data-row-name">Your Staked Balance</p>
+                                                <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trimmedMemoBalance} MEMO</>}</p>
+                                            </div>
+
+                                            <div className="data-row">
+                                                <p className="data-row-name">Next Reward Amount</p>
+                                                <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{nextRewardValue} MEMO</>}</p>
+                                            </div>
+
+                                            <div className="data-row">
+                                                <p className="data-row-name">Next Reward Yield</p>
+                                                <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{stakingRebasePercentage}%</>}</p>
+                                            </div>
+
+                                            <div className="data-row">
+                                                <p className="data-row-name">ROI (5-Day Rate)</p>
+                                                <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trim(Number(fiveDayRate) * 100, 4)}%</>}</p>
+                                            </div>
                                         </div>
                                     </div>
-
-                                    <div className="stake-user-data">
-                                        <div className="data-row">
-                                            <p className="data-row-name">Your Balance</p>
-                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trim(Number(timeBalance), 4)} TIME</>}</p>
-                                        </div>
-
-                                        <div className="data-row">
-                                            <p className="data-row-name">Your Staked Balance</p>
-                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trimmedMemoBalance} MEMO</>}</p>
-                                        </div>
-
-                                        <div className="data-row">
-                                            <p className="data-row-name">Next Reward Amount</p>
-                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{nextRewardValue} MEMO</>}</p>
-                                        </div>
-
-                                        <div className="data-row">
-                                            <p className="data-row-name">Next Reward Yield</p>
-                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{stakingRebasePercentage}%</>}</p>
-                                        </div>
-
-                                        <div className="data-row">
-                                            <p className="data-row-name">ROI (5-Day Rate)</p>
-                                            <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{trim(Number(fiveDayRate) * 100, 4)}%</>}</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                </>
                             )}
                         </div>
                     </Grid>
