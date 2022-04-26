@@ -1,17 +1,38 @@
 {
+  "name": "GreenDAO",
   "short_name": "GreenDAO",
   "start_url": ".",
   "homepage": "./",
-  "name": "GreenDAO",
   "launch_path": "/public/index.html",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "/logo/logo-24x24.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/logo-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/logo-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/logo-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/logo-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
     }
   ],
-  "display": "browser",
+  "display": "fullscreen",
+  "orientation": "landscape",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }

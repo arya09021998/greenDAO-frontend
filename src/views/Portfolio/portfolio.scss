@@ -1,13 +1,115 @@
 .portfolio-view {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 30px;
+
+  margin: auto;
+  padding: 60px 0;
+  width: 89%;
+  max-width: 1080px;
+  color: #FFFFFF;
 
   h1 {
+    margin: 0;
+    padding: 0;
     font-family: Montserrat SemiBold;
     font-weight: 600;
     font-size: 30px;
     color: #FFFFFF;
   }
-}
+
+  .portfolio-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .portfolio-contents {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+    position: relative;
+    z-index: 2;
+
+    padding: 18px 34px;
+    min-height: 90px;
+
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      background: #1E1D1D;
+      backdrop-filter: blur(100px);
+    }
+  
+    /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
+    @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+      background: #1E1D1D;
+    }
+
+    border-radius: 16px;
+
+    .portfolio-type {
+      font-size: 16px;
+      font-weight: 400;
+
+      @media (max-width: 720px) {
+        text-align: center;
+      }
+    }
+
+    .contents {
+      display: flex;
+
+      .portfolio-img {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        padding: 16px;
+        width: 142px;
+        height: 142px;
+        background: #000000;
+        border-radius: 16px;
+
+        img {
+          object-fit: contain!important;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .portfolio-info {
+        width: calc(100% - 142px);
+        padding: 0 4%;
+
+        .portfolio-title {
+          color: #7D7D7D;
+          font-size: 16px;
+          font-weight: 400;
+        }
+        
+        .portfolio-value {
+          font-size: 24px;
+          font-weight: 700;
+        }
+      }
+
+      @media (max-width: 720px) {
+        flex-direction: column;
+        gap: 16px;
+
+        .portfolio-img {
+          margin: auto;
+        }
+
+        .portfolio-info {
+          width: 100%;
+        }
+      }
+    }
+  }
+} 

@@ -1,4 +1,6 @@
+import { NavLink } from "react-router-dom";
 import { Link, Grid, Zoom } from "@material-ui/core";
+import { CURRENCIES } from "../../constants";
 
 function BuyBackPoolStates() {
     return (
@@ -12,7 +14,7 @@ function BuyBackPoolStates() {
                             <strong className="token-value">$43,959,180</strong>
                         </Grid>
                         <Grid item container direction="row" justifyContent="space-between" alignItems="center">
-                            <span className="token-name">GRC - USDT</span>
+                            <span className="token-name">{CURRENCIES} - USDT</span>
                             <strong className="token-value">533,318,064</strong>
                         </Grid>
                         <Grid item container direction="row" justifyContent="space-between" alignItems="center">
@@ -20,16 +22,18 @@ function BuyBackPoolStates() {
                             <strong className="token-value">221,095,762</strong>
                         </Grid>
                         <Grid item container direction="row" justifyContent="space-between" alignItems="center">
-                            <span className="token-name">GRC - GDAI</span>
+                            <span className="token-name">{CURRENCIES} - GDAI</span>
                             <strong className="token-value">1,406,509</strong>
                         </Grid>
                     </Grid>
                 </Zoom>
             </div>
             <div className="dashboard-btn-box">
-                <button type="button" className="dashboard-btn gold">
-                    Buy GRC
-                </button>
+                <Link component={NavLink} to="/mints" className="link">
+                    <button type="button" className="dashboard-btn gold">
+                        Buy {CURRENCIES}
+                    </button>
+                </Link>
                 <Link href="javascript:;" target="blank" rel="noopener noreferrer" className="link">
                     <button type="button" className="dashboard-btn">
                         View on Klaytnscope

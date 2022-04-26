@@ -1,6 +1,5 @@
-import { Grid, Zoom } from "@material-ui/core";
 import "./dashboard.scss";
-
+import { Grid, Zoom } from "@material-ui/core";
 import Info from "./Info";
 import Menu from "./Menu";
 import BuyBackFund from "./BuyBackFund";

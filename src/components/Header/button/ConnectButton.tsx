@@ -1,10 +1,10 @@
+import "./button.scss";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useWeb3Context } from "../../../hooks";
 import { DEFAULD_NETWORK } from "../../../constants";
 import { IReduxState } from "../../../store/slices/state.interface";
 import { IPendingTxn } from "../../../store/slices/pending-txns-slice";
-import "./connect-menu.scss";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 function ConnectMenu() {
